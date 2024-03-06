@@ -32,16 +32,26 @@
           <h1>0</h1>
         </div>
       </div>
-      <div class="game">
-        <div id="paper" class="moves">
-
+      <div id="outcome">
+        <div class="left">
+          <p class="title up">YOU PICKED</p>
+          <div id="player-choice" class="second-moves"></div>
+          <p class="title bottom">YOU PICKED</p>
+          </div>
+          <div class="right">
+            <p class="title up">THE HOUSE PICKED</p>
+            <div id="computer-choice" class="second-moves"></div>
+            <p class="title bottom">THE HOUSE PICKED</p>
+          </div>
+        <div class="restart">
+          <h2></h2>
+          <div id="play-again">PLAY AGAIN</div>
         </div>
-        <div id="scissors" class="moves">
-          
-        </div>
-        <div id="rock" class="moves">
-          
-        </div>
+      </div>
+      <div class="game" id="initial">
+        <div id="paper" class="moves" data-value="paper"></div>
+        <div id="scissors" class="moves" data-value="scissors"></div>
+        <div id="rock" class="moves" data-value="rock"></div>
       </div>
       <button class="check-rules">RULES</button>
     </div>

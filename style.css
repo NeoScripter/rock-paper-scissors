@@ -96,9 +96,9 @@ body {
 
 /* Main layout step 1 */
 
-.game {
-    margin-block: 1em;
+#initial {
     display: grid;
+    margin-top: 1em;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
@@ -148,12 +148,43 @@ body {
     box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.5), inset 0 5px 1px 0 rgb(0,0,0,0.2), 0 5px 4px 1px rgb(0,0,0,0.2), 0 6px 0 hsl(40, 84%, 53%);
 }
 
+/* Main layout step 2 */
+
+#outcome {
+    display: none;
+    background: none;
+    margin-top: 2em;
+    align-items: center;
+    gap: 2em;
+    grid-template-areas: 
+    "player restart computer";
+}
+
+.second-moves {
+    width: 8rem;
+    border: none;
+    background-color: hsl(239, 48%, 18%);
+    box-sizing: content-box;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+/* Main layout step 3 */
+
+.restart {
+    display: none;
+    text-align: center;
+    padding-top: 2em;
+    width: 8em;
+}
+
 /* Rules button */
 
 .check-rules {
     align-self: flex-end;
     padding: 1em 3em;
     margin: 2em;
+    margin-top: 0;
     background-color: transparent;
     border: 1px solid aliceblue;
     border-radius: 5px;
@@ -173,15 +204,16 @@ body {
 /* Rules styling */
 
 #rules {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,0.5);
-    display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .rules-wrapper {
@@ -198,6 +230,10 @@ body {
     font-weight: 900;
 }
 
+.rules-wrapper img {
+    max-width: 100%;
+}
+
 .exit-rules {
     width: 1em;
     font-size: 2rem;
@@ -207,7 +243,33 @@ body {
     cursor: pointer;
 }
 
+#play-again {
+    border-radius: 10px;
+    padding-block: 0.5em;
+    margin-top: 0.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(214, 47%, 23%);
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#play-again:focus, #play-again:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#play-again:active {
+    color: rgb(190, 29, 29);
+}
+
 /* Text styling */
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: aliceblue;
+}
 
 .score p {
     font-weight: 900;
@@ -226,10 +288,30 @@ h1 {
     line-height: 1;
 }
 
+.title {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 900;
+    color: aliceblue;
+}
+
+.up {
+    margin-bottom: 2em;
+}
+
+.bottom {
+    display: none;
+    margin-top: 2em;
+}
+
 /* Grid areas */
 
 .image-wrapper { grid-area: name;}
 .score { grid-area: score;}
+.restart { grid-area: restart;}
+.left { grid-area: player;}
+.right { grid-area: computer;}
 
 /* Responsive design for small screens */
 
@@ -266,5 +348,38 @@ h1 {
     }
     .moves:hover, .moves:focus {
         width: 26vw;
+    }
+    #rules {
+        background-color: aliceblue;
+        align-items: flex-start;
+    }
+    .top-bar {
+        justify-content: center;
+        margin-bottom: 3em;
+    }
+    .exit-rules {
+        position: absolute;
+        bottom: 5%;
+        left: 45%;
+    }
+    #outcome {
+        margin-bottom: 2em;
+        justify-items: center;
+        grid-template-areas: 
+        "player computer"
+        "restart restart";
+    }
+    .title {
+        font-size: 0.8rem;
+    }
+    .up {
+        display: none;
+    }
+    .bottom {
+        display: block;
+    }
+    .restart {
+        padding-top: 0;
+        width: 8em;
     }
 }
