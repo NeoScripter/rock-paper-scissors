@@ -39,5 +39,5 @@ function playGame(moves, playerSelection) {
     return playRound(playerSelection, computerSelection);
 }
 
-let input = prompt("Choose your move");
-alert(`${playGame(moves, input)}`);
+/* let input = prompt("Choose your move");
+alert(`${playGame(moves, input)}`); */
