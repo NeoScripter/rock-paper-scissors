@@ -1,4 +1,4 @@
-
+/* 
 const moves = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice(moves) {
@@ -37,7 +37,19 @@ function playRound(playerSelection, computerSelection) {
 function playGame(moves, playerSelection) {
     const computerSelection = getComputerChoice(moves);
     return playRound(playerSelection, computerSelection);
-}
+} */
 
 /* let input = prompt("Choose your move");
 alert(`${playGame(moves, input)}`); */
+
+const exitRules = document.querySelector(".exit-rules");
+const openRules = document.querySelector(".check-rules");
+const rulesWindow = document.getElementById("rules");
+
+exitRules.addEventListener("click", () => {
+    rulesWindow.style.display = "none";
+});
+
+openRules.addEventListener("click", () => {
+    rulesWindow.style.display = "flex";
+});
